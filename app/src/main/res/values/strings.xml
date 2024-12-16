@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">AL MOUSI9AR</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="newUser">Are you New User? Register</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="foPass">Forget Password? Recovery it</string>
+    <string name="searchFor">Search for song,artist,album</string>
+    <string name="popular">Popular Songs</string>
+    <string name="trending">Trending Now</string>
+    <string name="forYou">For You</string>
+    <string name="song">Songs</string>
+    <string name="home">Home</string>
+    <string name="dark">Dark Mode</string>
+    <string name="search">Search</string>
+    <string name="language">Languages</string>
+    <string name="about">About Us</string>
+    <string name="exit">Logout</string>
+    <string name="setting">Settings</string>
+    <string name="profile">Profile</string>
+    <string name="share">Share</string>
+    <string name="appName">Almosikar</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="mySongs">My Songs</string>
+    <string name="playLIst">My Playlist</string>
+    <string name="favorite">My Favorite</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/homeMe"
+    android:title="@string/home"
+    android:icon="@drawable/home_24" />
+   <item
+    android:id="@+id/listSongsMe"
+    android:title="@string/song"
+    android:icon="@drawable/music_24" />
+
+    <item android:title=""
+        android:enabled="true"/>
+
+   <item
+    android:id="@+id/myFavMe"
+    android:title="@string/mySongs"
+    android:icon="@drawable/heart" />
+    <item
+    android:id="@+id/playListMe"
+    android:title="@string/playLIst"
+    android:icon="@drawable/playlist_play_24" />
+
+
+</menu>
