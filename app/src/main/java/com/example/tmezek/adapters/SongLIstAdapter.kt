@@ -5,12 +5,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tmezek.R
 import com.example.tmezek.data.Song
+import com.example.tmezek.objects.Songs
 
 class SongLIstAdapter(
     private val list: ArrayList<Song>,
+    val add:Boolean,
     private val onFavoriteClicked: (Song) -> Unit
 ) : RecyclerView.Adapter<SongLIstAdapter.ViewHolder>() {
 
@@ -23,7 +26,7 @@ class SongLIstAdapter(
 
     // This method is binding the data on the list
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindItems(list[position], position)
+        holder.bindItems(list[position], position,holder)
     }
 
     // This method is giving the size of the list
@@ -34,12 +37,13 @@ class SongLIstAdapter(
     // The class is holding the list view
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bindItems(item: Song, position: Int) {
+        fun bindItems(item: Song, position: Int,holder: ViewHolder) {
             val title = itemView.findViewById<TextView>(R.id.songTxt)
             val duration = itemView.findViewById<TextView>(R.id.duration)
             val artist = itemView.findViewById<TextView>(R.id.artistTxt)
             val image = itemView.findViewById<ImageView>(R.id.imageCov)
             val favorite = itemView.findViewById<ImageView>(R.id.heartSong)
+            val addTo = itemView.findViewById<ImageView>(R.id.addTo)
 
             title.text = item.title
             duration.text = item.duration.toString()
@@ -53,6 +57,18 @@ class SongLIstAdapter(
                 item.isFavorite = !item.isFavorite
                 onFavoriteClicked(item)
                 notifyItemChanged(position)
+            }
+
+            if (add){
+                addTo.visibility = View.VISIBLE
+            }else{
+                addTo.visibility = View.GONE
+
+            }
+
+            addTo.setOnClickListener{
+                Songs.addSongToPlayList(item)
+                Toast.makeText(holder.itemView.context,"item add to play list song",Toast.LENGTH_SHORT).show()
             }
         }
     }

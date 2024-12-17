@@ -32,7 +32,6 @@ private lateinit var adapter: ArtistLIstAdapter
 
         adapter = ArtistLIstAdapter(FavoritesRepo.getFavoriteArtists() as  ArrayList){artist ->
             FavoritesRepo.removeFavoriteArtist(artist)
-
             adapter.notifyDataSetChanged()
         }
 

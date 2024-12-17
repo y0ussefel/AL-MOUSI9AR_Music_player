@@ -50,7 +50,7 @@ class ListSongsFragment : Fragment() {
 
         songsRc = view.findViewById(R.id.songListRv)
         songsRc.layoutManager = LinearLayoutManager(context)
-        adapter = SongLIstAdapter(list){ song ->
+        adapter = SongLIstAdapter(list,false){ song ->
             handleFavoriteClick(song)
         }
         songsRc.adapter  =adapter
@@ -65,6 +65,10 @@ class ListSongsFragment : Fragment() {
             FavoritesRepo.removeFavoriteSong(song)
         }
         adapter.notifyDataSetChanged()
+    }
+
+    private fun hundelAddSong(song:Song){
+
     }
 
     fun getFavoriteSongs(): ArrayList<Song> {

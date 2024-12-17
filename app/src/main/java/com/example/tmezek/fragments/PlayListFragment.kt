@@ -1,65 +1,59 @@
 package com.example.tmezek.fragments
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
+import android.widget.BaseAdapter
+import android.widget.EditText
+import android.widget.ImageView
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.core.widget.ImageViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tmezek.R
-import com.example.tmezek.adapters.PlaylistAdapter
-import com.example.tmezek.data.PlayList
+
 
 class PlayListFragment : Fragment() {
-
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: PlaylistAdapter
-    private val playlists = mutableListOf<PlayList>() // Replace with actual data source.
+private lateinit var recyclerView: RecyclerView
+private lateinit var adapter: PlayListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Example playlists (Replace with actual data source or ViewModel logic)
-        playlists.add(
-            PlayList(
-                id = "1",
-                name = "Chill Vibes",
-                description = "Relaxing songs to unwind",
-                coverImage = R.drawable.cover5 ,
-                songs = mutableListOf()
-            )
-        )
-        playlists.add(
-            PlayList(
-                id = "2",
-                name = "Workout Hits",
-                description = "Energetic beats to power your workout",
-                coverImage = R.drawable.cover2,
-                songs = mutableListOf()
-            )
-        )
+
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_playlist, container, false)
-        recyclerView = view.findViewById(R.id.playlistRecyclerView)
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        adapter = PlaylistAdapter(playlists) { playlist ->
-            navigateToPlaylistDetail(playlist)
-        }
-        recyclerView.adapter = adapter
-        return view
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.playlist_fragment, container, false)
+
+
     }
 
-    private fun navigateToPlaylistDetail(playlist: PlayList) {
-        val detailFragment = PlaylistDetailFragment.newInstance(playlist)
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.fl, detailFragment)
-            .addToBackStack(null)
-            .commit()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        recyclerView = view.findViewById(R.id.listOfPlayList)
+        val addPlayList = view.findViewById<ImageView>(R.id.addPlayList)
+
+        addPlayList.setOnClickListener{
+
+        }
     }
+
+    private fun displayDialog(){
+        val dialogView = LayoutInflater .from(requireContext()).inflate(R.layout.dialog_add_playlist,null)
+        val title = dialogView.findViewById<EditText>(R.id.titlePlayList)
+        val desc = dialogView.findViewById<EditText>(R.id.PlaylistDescription)
+
+
+    }
+
+
+
 }
