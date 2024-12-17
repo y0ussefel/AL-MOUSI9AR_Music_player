@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tmezek.R
 import com.example.tmezek.adapters.SongLIstAdapter
@@ -25,17 +26,10 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class DialogAddPlayList : Fragment() {
-    private lateinit var recyclerView: RecyclerView
     private lateinit var title: EditText
     private lateinit var descriptoin: EditText
 
 
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,16 +41,11 @@ class DialogAddPlayList : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        recyclerView = view.findViewById(R.id.songList)
+
         title = view.findViewById(R.id.titlePlayList)
         descriptoin = view.findViewById(R.id.playlistDescription)
         val btnAdd = view.findViewById<Button>(R.id.addPlayListTo)
 
-        val list = ArrayList(Songs.getSongs())
-        val adapater  = SongLIstAdapter(list,true){
-
-        }
-        recyclerView.adapter= adapater
 
         btnAdd.setOnClickListener{
             PlaylistRepo.addPlaylist(PlayList("1",title.text.toString(),descriptoin.text.toString()

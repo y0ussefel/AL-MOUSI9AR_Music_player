@@ -23,10 +23,13 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-        <FrameLayout
+        <LinearLayout
             android:id="@+id/fl"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_below="@+id/toolBar"
+            android:layout_marginTop="-56dp"
+            android:orientation="vertical" />
 
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:id="@+id/coordinatorLayout"

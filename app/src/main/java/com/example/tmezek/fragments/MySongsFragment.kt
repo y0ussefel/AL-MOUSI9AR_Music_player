@@ -39,7 +39,7 @@ class MySongsFragment : Fragment() {
         val v=  inflater.inflate(R.layout.fragment_my_songs, container, false)
         recyclerView= v.findViewById(R.id.mySongsRv)
         recyclerView.layoutManager = LinearLayoutManager(context)
-        adapter = SongLIstAdapter(FavoritesRepo.getFavoriteSongs() as ArrayList){ song ->
+        adapter = SongLIstAdapter(FavoritesRepo.getFavoriteSongs() as ArrayList,false){ song ->
             FavoritesRepo.removeFavoriteSong(song)
             adapter.notifyDataSetChanged()
         }
