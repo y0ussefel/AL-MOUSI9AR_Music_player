@@ -20,15 +20,11 @@
     <string name="setting">Settings</string>
     <string name="profile">Profile</string>
     <string name="share">Share</string>
-    <string name="appName">Almosikar</string>
+    <string name="appName">AL MOUSI9AR</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
     <string name="mySongs">My Songs</string>
     <string name="playLIst">My Playlist</string>
     <string name="favorite">My Favorite</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
 
 </resources>

@@ -9,8 +9,9 @@
     android:title="@string/song"
     android:icon="@drawable/music_24" />
 
-    <item android:title=""
-        android:enabled="true"/>
+    <item android:title="@string/search"
+        android:icon="@drawable/search_24"
+        android:id="@+id/searchMe"/>
 
    <item
     android:id="@+id/myFavMe"

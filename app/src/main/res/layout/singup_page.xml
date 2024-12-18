@@ -69,11 +69,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etName" />
 
-    <!-- Password Input -->
 
-    <!-- Sign-Up Button -->
-
-    <!-- Social Media Buttons -->
 
     <EditText
         android:id="@+id/etPassword"

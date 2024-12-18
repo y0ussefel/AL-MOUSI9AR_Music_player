@@ -67,9 +67,7 @@ class ListSongsFragment : Fragment() {
         adapter.notifyDataSetChanged()
     }
 
-    private fun hundelAddSong(song:Song){
 
-    }
 
     fun getFavoriteSongs(): ArrayList<Song> {
         return favoriteSongs

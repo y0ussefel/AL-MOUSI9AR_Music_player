@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">الموسيقار</string>
+    <string name="facebook">فيسبوك</string>
+    <string name="google">جوجل</string>
+    <string name="newUser">هل أنت مستخدم جديد؟ سجل الآن</string>
+    <string name="male">ذكر</string>
+    <string name="female">أنثى</string>
+    <string name="foPass">نسيت كلمة المرور؟ استرجعها</string>
+    <string name="searchFor">ابحث عن أغنية، فنان، ألبوم</string>
+    <string name="popular">الأغاني الشعبية</string>
+    <string name="trending">الشائع الآن</string>
+    <string name="forYou">لأجلك</string>
+    <string name="song">الأغاني</string>
+    <string name="home">الرئيسية</string>
+    <string name="dark">الوضع الداكن</string>
+    <string name="search">بحث</string>
+    <string name="language">اللغات</string>
+    <string name="about">من نحن</string>
+    <string name="exit">تسجيل الخروج</string>
+    <string name="setting">الإعدادات</string>
+    <string name="profile">الملف الشخصي</string>
+    <string name="share">مشاركة</string>
+    <string name="appName">AL MOUSI9AR</string>
+    <string name="open">فتح</string>
+    <string name="close">إغلاق</string>
+    <string name="mySongs">أغانيي</string>
+    <string name="playLIst">قائمتي</string>
+    <string name="favorite">المفضلة</string>
+</resources>

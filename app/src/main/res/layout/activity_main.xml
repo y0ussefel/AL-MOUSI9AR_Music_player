@@ -9,65 +9,39 @@
     tools:context=".MainActivity"
     tools:openDrawer="start">
 
-
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolBar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="0dp"
             android:background="@color/accentColor"
             android:elevation="4dp"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+            android:theme="@style/ThemeOverlay.AppCompat.Light"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
 
-        <LinearLayout
+        <FrameLayout
             android:id="@+id/fl"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_above="@+id/btnNav"
             android:layout_below="@+id/toolBar"
-            android:layout_marginTop="-56dp"
-            android:orientation="vertical" />
+             />
 
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
-            android:id="@+id/coordinatorLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
-            <com.google.android.material.bottomappbar.BottomAppBar
-                android:id="@+id/bottomAppBar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom"
-                android:backgroundTint="@color/accentColor"
-                app:fabCradleMargin="10dp"
-                app:fabCradleRoundedCornerRadius="50dp">
-
-                <com.google.android.material.bottomnavigation.BottomNavigationView
-                    android:id="@+id/btnNav"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    app:labelVisibilityMode="labeled"
-                    app:menu="@menu/bottom_menu" />
-
-            </com.google.android.material.bottomappbar.BottomAppBar>
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/floatingBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/accentColor"
-
-                android:src="@drawable/search_24"
-                app:layout_anchor="@+id/bottomAppBar"
-                app:layout_anchorGravity="center"
-                app:maxImageSize="30dp" />
-
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/btnNav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="0dp"
+            android:background="@color/witheMix"
+            app:labelVisibilityMode="labeled"
+            app:menu="@menu/bottom_menu" />
     </RelativeLayout>
 
     <com.google.android.material.navigation.NavigationView
