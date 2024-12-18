@@ -19,11 +19,7 @@
             android:layout_height="wrap_content"
             android:hint="Playlist Description"/>
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="add"
-            android:id="@+id/addPlayListTo"/>
+
 
     </LinearLayout>
 

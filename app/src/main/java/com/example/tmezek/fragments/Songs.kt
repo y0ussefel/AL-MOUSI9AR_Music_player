@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.viewpager2.widget.ViewPager2
 import com.example.tmezek.R
 import com.example.tmezek.adapters.SongsFragmentAdapter
@@ -27,6 +28,7 @@ class Songs : Fragment() {
         return inflater.inflate(R.layout.fragment_songs, container, false)
     }
     private lateinit var pageChangeCallback: ViewPager2.OnPageChangeCallback
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -48,8 +50,12 @@ class Songs : Fragment() {
                 }
             }
 
-            override fun onTabUnselected(tab: TabLayout.Tab?) {}
-            override fun onTabReselected(tab: TabLayout.Tab?) {}
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+                Toast.makeText(requireContext(),"Unselected tab",Toast.LENGTH_SHORT).show()
+            }
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+                Toast.makeText(requireContext(),"reselected tab",Toast.LENGTH_SHORT).show()
+            }
         })
 
         pageChangeCallback = object : ViewPager2.OnPageChangeCallback() {

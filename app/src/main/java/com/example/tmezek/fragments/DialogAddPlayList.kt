@@ -44,13 +44,10 @@ class DialogAddPlayList : Fragment() {
 
         title = view.findViewById(R.id.titlePlayList)
         descriptoin = view.findViewById(R.id.playlistDescription)
-        val btnAdd = view.findViewById<Button>(R.id.addPlayListTo)
 
 
-        btnAdd.setOnClickListener{
-            PlaylistRepo.addPlaylist(PlayList("1",title.text.toString(),descriptoin.text.toString()
-                ,null,Songs.getSongsList().toMutableList()))
-        }
+
+
 
     }
 

@@ -17,24 +17,24 @@ class SongLIstAdapter(
     private val onFavoriteClicked: (Song) -> Unit
 ) : RecyclerView.Adapter<SongLIstAdapter.ViewHolder>() {
 
-    // This method is returning the view for each item in the list
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context)
             .inflate(R.layout.fragment_list_song_itmes, parent, false)
         return ViewHolder(v)
     }
 
-    // This method is binding the data on the list
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItems(list[position], position,holder)
     }
 
-    // This method is giving the size of the list
     override fun getItemCount(): Int {
         return list.size
     }
-
-    // The class is holding the list view
+    fun updateData(newSongs: List<Song>) {
+        list.clear()
+        list.addAll(newSongs)
+        notifyDataSetChanged()
+    }
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bindItems(item: Song, position: Int,holder: ViewHolder) {
@@ -61,14 +61,15 @@ class SongLIstAdapter(
 
             if (add){
                 addTo.visibility = View.VISIBLE
+                favorite.visibility = View.GONE
             }else{
                 addTo.visibility = View.GONE
+                favorite.visibility = View.VISIBLE
 
             }
 
             addTo.setOnClickListener{
-                Songs.addSongToPlayList(item)
-                Toast.makeText(holder.itemView.context,"item add to play list song",Toast.LENGTH_SHORT).show()
+                onFavoriteClicked(item)
             }
         }
     }

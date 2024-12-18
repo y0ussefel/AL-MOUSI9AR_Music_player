@@ -26,5 +26,7 @@
     <string name="mySongs">My Songs</string>
     <string name="playLIst">My Playlist</string>
     <string name="favorite">My Favorite</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
