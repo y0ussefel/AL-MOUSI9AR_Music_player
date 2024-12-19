@@ -35,31 +35,36 @@ class SheetFragment : BottomSheetDialogFragment() {
         val LesSong = view.findViewById<RecyclerView>(R.id.sheetSong)
         val bundle = arguments
         if (bundle != null) {
-            nomP = bundle.getString("title").toString()
+            nomP = bundle.getString("title2").toString()
             val playlist = PlaylistRepo.findPosition(nomP)
             if (playlist != null) {
                 listt = ArrayList(playlist.songs)
             }
-        LesSong.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        val availableSongs = Songs.getSongs()
+            LesSong.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+            val availableSongs = Songs.getSongs()
 
-            adapter2 = SongLIstAdapter(ArrayList(availableSongs), true) { song ->
-            playlist?.let {
-                if (!it.songs.contains(song)) {
-                    PlaylistRepo.update(it, song)
-                    listt.clear()
-                    listt.addAll(it.songs)
+            adapter2 = SongLIstAdapter(
+                ArrayList(availableSongs)
+                , true) { song ->
+                playlist?.let {
+                    if (!it.songs.contains(song)) {
+                        PlaylistRepo.update(it, song)
+                        listt.clear()
+                        listt.addAll(it.songs)
 
-                    val updatedSongs = Songs.getSongs().filter { s -> !it.songs.contains(s) }
-                    adapter2.updateData(updatedSongs)
+                        val updatedSongs = Songs.getSongs().filter { s -> !it.songs.contains(s) }
+                        adapter2.updateData(updatedSongs)
 
-                    Toast.makeText(requireContext(), "Chanson ajoutée à la playlist", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(requireContext(), "La chanson est déjà dans la playlist", Toast.LENGTH_SHORT).show()
+                        parentFragmentManager.setFragmentResult("updatePlaylist", Bundle())
+                        Toast.makeText(requireContext(), "Chanson ajoutée à la playlist", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(requireContext(), "La chanson est déjà dans la playlist", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
+
+
+            LesSong.adapter = adapter2
         }
-        LesSong.adapter = adapter2
-    }
     }
 }

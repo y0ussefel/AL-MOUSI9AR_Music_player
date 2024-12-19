@@ -12,7 +12,6 @@ object Songs {
         Song(id = "3", title = "Levitating", artist = listOf("Dua Lipa", "DaBaby"), album = "Future Nostalgia", duration = 203, coverImage = R.drawable.cover, genre = "Disco-Pop", releaseDate = "2020-03-27",false),
         Song(id = "4", title = "Someone Like You", artist = listOf("Adele"), album = "21", duration = 285, coverImage = R.drawable.cover, genre = "Soul", releaseDate = "2011-01-24",false),
         Song(id = "5", title = "Hotel California", artist = listOf("Eagles"), album = "Hotel California", duration = 390, coverImage = R.drawable.cover, genre = "Classic Rock", releaseDate = "1976-12-08",false),
-
         Song(id = "6", title = "Bohemian Rhapsody", artist = listOf("Queen"), album = "A Night at the Opera", duration = 354, coverImage = R.drawable.cover, genre = "Rock", releaseDate = "1975-10-31",false),
         Song(id = "7", title = "Like a Rolling Stone", artist = listOf("Bob Dylan"), album = "Highway 61 Revisited", duration = 368, coverImage = R.drawable.cover, genre = "Folk Rock", releaseDate = "1965-07-20",false),
         Song(id = "8", title = "Stairway to Heaven", artist = listOf("Led Zeppelin"), album = "Led Zeppelin IV", duration = 482, coverImage = R.drawable.cover, genre = "Hard Rock", releaseDate = "1971-11-08",false),

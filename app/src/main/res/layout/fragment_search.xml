@@ -12,7 +12,7 @@
         android:layout_height="50dp"
         android:background="@drawable/edite_text_shap"
         android:padding="8dp"
-        android:drawableStart="@drawable/search_24"
+        android:drawableStart="@drawable/search2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

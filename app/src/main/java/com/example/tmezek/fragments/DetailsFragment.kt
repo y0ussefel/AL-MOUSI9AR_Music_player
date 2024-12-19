@@ -58,6 +58,13 @@ class DetailsFragment : Fragment() {
                 adapter = ForYouAdapter(listt)
                 MesSong.adapter = adapter
             }
+            parentFragmentManager.setFragmentResultListener("updatePlaylist", this) { _, _ ->
+                playlist?.let {
+                    listt.clear()
+                    listt.addAll(it.songs)
+                    adapter.notifyDataSetChanged()
+                }
+            }
             buttonSeet.setOnClickListener{
                 val btnFragment = SheetFragment()
                 val bundle2 =Bundle()
@@ -65,7 +72,6 @@ class DetailsFragment : Fragment() {
                 btnFragment.arguments=bundle2
                 btnFragment.show(parentFragmentManager,btnFragment.tag)
             }
-
         }
     }
 }

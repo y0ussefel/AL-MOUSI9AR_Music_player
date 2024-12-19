@@ -12,7 +12,8 @@ import com.example.tmezek.R
 import com.example.tmezek.data.Song
 
 
-class PopularAdapter(private val list: ArrayList<Song>) :
+class PopularAdapter(private val list: ArrayList<Song>, private val onSongClicked: (Song) -> Unit
+) :
     RecyclerView.Adapter<PopularAdapter.ViewHolder>() {
 
     //this method is returning the view for each item in the list
@@ -24,7 +25,7 @@ class PopularAdapter(private val list: ArrayList<Song>) :
 
     //this method is binding the data on the list
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindItems(list[position])
+        holder.bindItems(list[position],position)
 
 
     }
@@ -35,9 +36,9 @@ class PopularAdapter(private val list: ArrayList<Song>) :
     }
 
     //the class is hodling the list view
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bindItems(item: Song) {
+        fun bindItems(item: Song,position: Int) {
             val title = itemView.findViewById<TextView>(R.id.songName2)
             val artist = itemView.findViewById<TextView>(R.id.artist2)
             val image = itemView.findViewById<ImageView>(R.id.image2)
@@ -46,6 +47,10 @@ class PopularAdapter(private val list: ArrayList<Song>) :
             title.text = item.title
             artist.text = item.artist.joinToString(",")
             image.setImageResource(item.coverImage)
+
+            itemView.setOnClickListener {
+                onSongClicked(item)
+            }
 
         }
     }

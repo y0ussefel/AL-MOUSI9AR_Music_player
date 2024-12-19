@@ -1,5 +1,6 @@
 package com.example.tmezek.fragments
 
+import PlayerFragment
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -63,7 +64,8 @@ class Activities : Fragment() {
 
         populerRc = view.findViewById(R.id.popularRv)
         populerRc.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        adapterPP = PopularAdapter(listTrending)
+        adapterPP = PopularAdapter(listTrending){song ->
+            openPlayerFragment(song)  }
         populerRc.adapter = adapterPP
 
         forYouRc = view.findViewById(R.id.forYouRv)
@@ -73,6 +75,19 @@ class Activities : Fragment() {
         return view
 
     }
+    private fun openPlayerFragment(song: Song) {
+        val fragment = PlayerFragment() // Assuming `PlayerFragment` is your music player fragment
+        val bundle = Bundle().apply {
+            putParcelable("song", song) // Send the selected song
+        }
+        fragment.arguments = bundle
+
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.fl, fragment) // Ensure the correct container ID
+            .addToBackStack(null)
+            .commit()
+    }
+
 
 
 }
