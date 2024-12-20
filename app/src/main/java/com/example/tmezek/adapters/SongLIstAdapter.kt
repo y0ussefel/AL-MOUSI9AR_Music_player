@@ -12,9 +12,10 @@ import com.example.tmezek.data.Song
 import com.example.tmezek.objects.Songs
 
 class SongLIstAdapter(
-    private val list: ArrayList<Song>,
+     val list: ArrayList<Song>,
     val add:Boolean,
     private val onFavoriteClicked: (Song) -> Unit
+
 ) : RecyclerView.Adapter<SongLIstAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -59,6 +60,8 @@ class SongLIstAdapter(
                 notifyItemChanged(position)
             }
 
+
+
             if (add){
                 addTo.visibility = View.VISIBLE
                 favorite.visibility = View.GONE
@@ -71,6 +74,7 @@ class SongLIstAdapter(
             addTo.setOnClickListener{
                 onFavoriteClicked(item)
             }
+
         }
     }
 }

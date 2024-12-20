@@ -1,5 +1,6 @@
 package com.example.tmezek.fragments
 
+import android.content.Context
 import android.content.SharedPreferences
 import android.content.res.Configuration
 import android.os.Bundle
@@ -9,12 +10,15 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.widget.SwitchCompat
 import androidx.fragment.app.Fragment
 import com.example.tmezek.R
 import java.util.Locale
 
 class ProfileFragment : Fragment() {
-
+    private lateinit var darkModeSwitch: SwitchCompat
+    private lateinit var sharedPreferences: SharedPreferences
     private val languages = listOf("en", "ar", "fr")
 
     override fun onCreateView(
@@ -25,7 +29,7 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val sharedPreferences = requireContext().getSharedPreferences("AppPreferences", 0)
+         sharedPreferences = requireContext().getSharedPreferences("AppPreferences", 0)
         val savedLanguage = sharedPreferences.getString("LANGUAGE", "en") ?: "en"
 
         val spinner = view.findViewById<Spinner>(R.id.spinner).apply {
@@ -42,6 +46,7 @@ class ProfileFragment : Fragment() {
                 override fun onNothingSelected(parent: AdapterView<*>?) {}
             }
         }
+
     }
 
     private fun setLocale(language: String) {

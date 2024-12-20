@@ -1,10 +1,14 @@
 package com.example.tmezek.fragments
 
 import android.os.Bundle
+import android.view.GestureDetector
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.view.GestureDetectorCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tmezek.R
@@ -16,7 +20,7 @@ import com.example.tmezek.objects.FavoritesRepo
 class ListSongsFragment : Fragment() {
     private lateinit var songsRc :RecyclerView
     private lateinit var adapter :SongLIstAdapter
-    private lateinit var list : ArrayList<Song>
+     lateinit var list : ArrayList<Song>
     private val favoriteSongs = arrayListOf<Song>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,9 +54,9 @@ class ListSongsFragment : Fragment() {
 
         songsRc = view.findViewById(R.id.songListRv)
         songsRc.layoutManager = LinearLayoutManager(context)
-        adapter = SongLIstAdapter(list,false){ song ->
+        adapter = SongLIstAdapter(list, false, { song ->
             handleFavoriteClick(song)
-        }
+        })
         songsRc.adapter  =adapter
 
         return view
@@ -66,8 +70,6 @@ class ListSongsFragment : Fragment() {
         }
         adapter.notifyDataSetChanged()
     }
-
-
 
     fun getFavoriteSongs(): ArrayList<Song> {
         return favoriteSongs
