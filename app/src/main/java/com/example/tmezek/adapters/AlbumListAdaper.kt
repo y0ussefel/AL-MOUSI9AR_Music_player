@@ -1,16 +1,20 @@
 package com.example.tmezek.adapters
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tmezek.R
 import com.example.tmezek.data.Album
+import com.example.tmezek.fragments.AlbumSongs
 
 
-class AlbumListAdaper(private val list: ArrayList<Album>) :
+class AlbumListAdaper(private val list: ArrayList<Album>,var parentFragment : FragmentManager) :
     RecyclerView.Adapter<AlbumListAdaper.ViewHolder>() {
 
     //this method is returning the view for each item in the list
@@ -23,7 +27,16 @@ class AlbumListAdaper(private val list: ArrayList<Album>) :
     //this method is binding the data on the list
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItems(list[position])
+        val item = list[position]
+        holder.itemView.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("titleAlbum",item.title)
+            bundle.putInt("coverAlbum",item.coverImage)
+            AlbumSongs().arguments = bundle
+            parentFragment.beginTransaction()
+                .replace(R.id.fl,AlbumSongs())
 
+        }
 
     }
 
@@ -44,6 +57,8 @@ class AlbumListAdaper(private val list: ArrayList<Album>) :
             titleAlbum.text = item.title
             artistAlbum.text = item.artist
             cover.setImageResource(item.coverImage)
+
+
 
         }
     }

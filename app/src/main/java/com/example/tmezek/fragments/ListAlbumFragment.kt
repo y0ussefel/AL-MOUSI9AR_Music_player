@@ -56,8 +56,10 @@ class ListAlbumFragment : Fragment() {
          val view = inflater.inflate(R.layout.fragment_list_album, container, false)
           albumRc = view.findViewById(R.id.albumListRv)
         albumRc.layoutManager = GridLayoutManager(context,2)
-        adapter = AlbumListAdaper(list)
+        adapter = AlbumListAdaper(list,parentFragmentManager)
         albumRc.adapter = adapter
+
+        val bundle = Bundle()
 
         return view
     }
