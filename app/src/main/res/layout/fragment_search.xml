@@ -4,11 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/witheMix"
     tools:context=".fragments.SearchFragment">
 
     <EditText
         android:id="@+id/searchForMusic"
         android:layout_width="match_parent"
+        android:textColorHint="@color/primaryColor"
+        android:backgroundTint="@color/witheMix"
         android:layout_height="50dp"
         android:background="@drawable/edite_text_shap"
         android:padding="8dp"

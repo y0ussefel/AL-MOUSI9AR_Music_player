@@ -13,10 +13,10 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/witheMix"
             android:layout_marginTop="16dp">
             <TextView
                 android:id="@+id/pop"
+                android:textColor="@color/primaryColor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -39,6 +39,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/trend" />
 
             <TextView
+                android:textColor="@color/primaryColor"
                 android:id="@+id/trend"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -52,6 +53,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/popularRv"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -60,6 +62,7 @@
                 tools:layout_editor_absoluteX="0dp" />
 
             <TextView
+                android:textColor="@color/primaryColor"
                 android:id="@+id/fory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

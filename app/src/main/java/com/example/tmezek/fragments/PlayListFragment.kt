@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
@@ -40,7 +41,7 @@ class PlayListFragment : Fragment() {
 
         adapter.notifyDataSetChanged()
 
-        val addPlayList = view.findViewById<ImageView>(R.id.addPlayList)
+        val addPlayList = view.findViewById<Button>(R.id.addPlayList)
 
         addPlayList.setOnClickListener {
             val dialogView = layoutInflater.inflate(R.layout.dialog_add_playlist, null)

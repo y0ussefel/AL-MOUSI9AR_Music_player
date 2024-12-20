@@ -1,10 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Tmezek" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Base.Theme.Tmezek" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
          <item name="colorPrimary">@color/accentColor</item>
-         <item name="colorPrimaryVariant">@color/darkGray</item>
-        <item name="android:statusBarColor" >#EF0D5E</item>
+         <item name="colorPrimaryVariant">@color/primaryColor</item>
+        <item name="android:statusBarColor" >@color/accentColor</item>
     </style>
 
     <style name="Theme.Tmezek" parent="Base.Theme.Tmezek" />

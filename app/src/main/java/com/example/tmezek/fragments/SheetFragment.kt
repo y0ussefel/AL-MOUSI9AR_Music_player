@@ -9,19 +9,16 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tmezek.R
-import com.example.tmezek.adapters.ForYouAdapter
 import com.example.tmezek.adapters.SongLIstAdapter
 import com.example.tmezek.data.Song
 import com.example.tmezek.objects.PlaylistRepo
 import com.example.tmezek.objects.Songs
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-
 class SheetFragment : BottomSheetDialogFragment() {
     lateinit var adapter2: SongLIstAdapter
     lateinit var nomP: String
     lateinit var listt: ArrayList<Song>
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,8 +41,9 @@ class SheetFragment : BottomSheetDialogFragment() {
             val availableSongs = Songs.getSongs()
 
             adapter2 = SongLIstAdapter(
-                ArrayList(availableSongs)
-                , true) { song ->
+                ArrayList(availableSongs),
+                true
+            ) { song ->
                 playlist?.let {
                     if (!it.songs.contains(song)) {
                         PlaylistRepo.update(it, song)
@@ -56,13 +54,12 @@ class SheetFragment : BottomSheetDialogFragment() {
                         adapter2.updateData(updatedSongs)
 
                         parentFragmentManager.setFragmentResult("updatePlaylist", Bundle())
-                        Toast.makeText(requireContext(), "Chanson ajoutée à la playlist", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "Song added to the playlist", Toast.LENGTH_SHORT).show()
                     } else {
-                        Toast.makeText(requireContext(), "La chanson est déjà dans la playlist", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireContext(), "The song is already in the playlist", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
-
 
             LesSong.adapter = adapter2
         }

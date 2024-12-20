@@ -9,6 +9,7 @@ android:layout_height="match_parent">
 <TextView
     android:id="@+id/songTx"
     android:layout_width="match_parent"
+    android:textColor="@color/primaryColor"
     android:layout_height="wrap_content"
     android:layout_marginStart="20dp"
     android:layout_marginTop="16dp"

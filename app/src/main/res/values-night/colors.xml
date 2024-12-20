@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primaryColor">#2A2929</color>
-        <color name="accentColor">#6672FF</color>
+    <color name="primaryColor">#FFFFFF</color>
+    <color name="accentColor">#4854DC</color>
     <color name="backgroundColor">#121212</color>
     <color name="textColor">#FFFFFF</color>
     <color name="light">#928F8F</color>
-    <color name="witheMix">#EFF5FD</color>
+    <color name="witheMix">#ff424242</color>
     <color name="gray">#aaa</color>
     <color name="darkGray">#ff424242</color>
     <color name="inputColor">#ecf2f0</color>
-
 </resources>
