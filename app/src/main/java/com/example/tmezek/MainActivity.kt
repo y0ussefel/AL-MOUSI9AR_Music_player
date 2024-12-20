@@ -48,14 +48,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         activeFragment = fragments["ACTIVITIES"]!!
         supportFragmentManager.beginTransaction().add(R.id.fl, activeFragment, "ACTIVITIES").commit()
-
+        makeCurrentFragment(Activities())
         btnNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.homeMe -> switchFragment("ACTIVITIES")
-                R.id.listSongsMe -> switchFragment("SONGS")
-                R.id.myFavMe -> switchFragment("FAVORITES")
-                R.id.searchMe -> switchFragment("SEARCH")
-                R.id.playListMe -> switchFragment("PLAYLIST")
+                R.id.homeMe -> makeCurrentFragment(Activities())
+                R.id.listSongsMe -> makeCurrentFragment(Songs())
+                R.id.myFavMe -> makeCurrentFragment(Favorites())
+                R.id.searchMe -> makeCurrentFragment(SearchFragment())
+                R.id.playListMe -> makeCurrentFragment(PlayListFragment())
             }
             true
         }
@@ -63,48 +63,23 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.home -> switchFragment("ACTIVITIES")
-            R.id.profile -> switchFragment("PROFILE") { ProfileFragment() }
+            R.id.home -> makeCurrentFragment(Activities())
+            R.id.profile -> makeCurrentFragment(ProfileFragment())
             R.id.share -> shareApp()
-            R.id.about -> switchFragment("ABOUT") { AboutFragment() }
+            R.id.about -> makeCurrentFragment(AboutFragment())
             R.id.logOut -> showLogoutConfirmation()
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
     }
 
-    override fun onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressedDispatcher.onBackPressed()
+
+
+    private fun makeCurrentFragment(fragment: Fragment) =
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.fl, fragment)
+            commit()
         }
-    }
-
-    private fun switchFragment(tag: String, factory: (() -> Fragment)? = null) {
-        val newFragment = fragments[tag] ?: factory?.invoke()?.also { fragments[tag] = it }
-        if (newFragment != null && newFragment != activeFragment) {
-            // Hide currently active fragment
-            supportFragmentManager.beginTransaction().apply {
-                hide(activeFragment)
-
-                // Remove any modal fragments like SheetFragment
-                val sheetFragment = supportFragmentManager.findFragmentByTag("SheetFragment")
-                if (sheetFragment != null) {
-                    remove(sheetFragment)
-                }
-
-                // Show or add the new fragment
-                if (!newFragment.isAdded) {
-                    add(R.id.fl, newFragment, tag)
-                } else {
-                    show(newFragment)
-                }
-            }.commit()
-            activeFragment = newFragment
-        }
-    }
-
 
     private fun shareApp() {
         val appLink = "https://play.google.com/store/apps/details?id=com.example.tmezek"
@@ -130,4 +105,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
     }
+
+
 }

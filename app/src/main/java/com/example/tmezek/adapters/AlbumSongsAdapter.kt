@@ -1,42 +1,28 @@
 package com.example.tmezek.adapters
 
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tmezek.R
 import com.example.tmezek.data.Album
-import com.example.tmezek.fragments.AlbumSongs
 
-
-class AlbumListAdaper(private val list: ArrayList<Album>,var parentFragment : FragmentManager) :
-    RecyclerView.Adapter<AlbumListAdaper.ViewHolder>() {
+class AlbumSongsAdapter(private val list: ArrayList<Album>) :
+    RecyclerView.Adapter<AlbumSongsAdapter.ViewHolder>() {
 
     //this method is returning the view for each item in the list
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context)
-            .inflate(R.layout.fragment_list_album_items, parent, false)
+            .inflate(R.layout.album_songs_items, parent, false)
         return ViewHolder(v)
     }
 
     //this method is binding the data on the list
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindItems(list[position])
-        val item = list[position]
-        holder.itemView.setOnClickListener {
-            val bundle = Bundle()
-            bundle.putString("titleAlbum",item.title)
-            bundle.putInt("coverAlbum",item.coverImage)
-            AlbumSongs().arguments = bundle
-            parentFragment.beginTransaction()
-                .replace(R.id.fl,AlbumSongs())
 
-        }
 
     }
 
@@ -57,8 +43,6 @@ class AlbumListAdaper(private val list: ArrayList<Album>,var parentFragment : Fr
             titleAlbum.text = item.title
             artistAlbum.text = item.artist
             cover.setImageResource(item.coverImage)
-
-
 
         }
     }
