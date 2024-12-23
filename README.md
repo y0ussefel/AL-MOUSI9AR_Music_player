@@ -13,7 +13,6 @@ A sleek and modern music player app designed for music enthusiasts. AL MOUSI9AR 
 - **User-Friendly Interface:** Simple, sleek, and visually appealing design.
 
 ## Screenshots 📸
-## Screenshots 📸
 <img src="https://github.com/user-attachments/assets/41627f6a-725d-44ba-a6f7-b03b437c4023" width="300" />
 <img src="https://github.com/user-attachments/assets/4050ecbb-7392-4493-9cf3-227791451d7d" width="300" />
 
