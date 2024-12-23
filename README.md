@@ -35,8 +35,8 @@ A sleek and modern music player app designed for music enthusiasts. AL MOUSI9AR 
 
 ## Contact 💬
 ### For any inquiries or support, feel free to reach out:
-Developer: YOUSSEF EL FENARY
-GitHub: y0ussefel
+- Developer: YOUSSEF EL FENARY
+- GitHub: y0ussefel
 
 
 
