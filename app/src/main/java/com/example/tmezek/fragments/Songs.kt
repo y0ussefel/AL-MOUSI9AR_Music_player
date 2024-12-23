@@ -48,13 +48,12 @@ class Songs : Fragment() {
 
         TabLayoutMediator(tabLayout,pager){tab,po ->
             tab.text =when(po){
-                0-> "songs"
-                1-> "artsit"
-                2-> "sss"
-                3-> "sos"
+                0-> "Songs"
+                1-> "Artist"
+                2-> "Albums"
+                3-> "Geners"
                 else -> null
             }
-
         }.attach()
 
 
@@ -90,7 +89,7 @@ class Songs : Fragment() {
 }
 
 class ViewPagerRacingAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
-    override fun getItemCount(): Int = 2
+    override fun getItemCount(): Int = 4
     override fun createFragment(position: Int): Fragment = when (position) {
         0 -> ListSongsFragment()
         1 -> ListArtistFragment()

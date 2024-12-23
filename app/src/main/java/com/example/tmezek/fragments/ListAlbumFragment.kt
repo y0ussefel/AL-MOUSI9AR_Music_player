@@ -36,16 +36,23 @@ class ListAlbumFragment : Fragment() {
             Album(id = "4", title = "21", artist = "Adele", releaseDate = "2011", coverImage = R.drawable.cover4),
             Album(id = "5", title = "Thriller", artist = "Michael Jackson", releaseDate = "1982", coverImage = R.drawable.cover5),
             Album(id = "6", title = "Nevermind", artist = "Nirvana", releaseDate = "1991", coverImage = R.drawable.cover6),
-            Album(id = "7", title = "Abbey Road", artist = "The Beatles", releaseDate = "1969", coverImage = R.drawable.cover1),
-            Album(id = "8", title = "Rumours", artist = "Fleetwood Mac", releaseDate = "1977", coverImage = R.drawable.cover2),
-            Album(id = "9", title = "Back to Black", artist = "Amy Winehouse", releaseDate = "2006", coverImage = R.drawable.cover3),
-            Album(id = "10", title = "Hotel California", artist = "Eagles", releaseDate = "1976", coverImage = R.drawable.cover4),
-            Album(id = "11", title = "The Dark Side of the Moon", artist = "Pink Floyd", releaseDate = "1973", coverImage = R.drawable.cover5),
-            Album(id = "12", title = "Born to Run", artist = "Bruce Springsteen", releaseDate = "1975", coverImage = R.drawable.cover6),
-            Album(id = "13", title = "Like a Prayer", artist = "Madonna", releaseDate = "1989", coverImage = R.drawable.cover1),
-            Album(id = "14", title = "Purple Rain", artist = "Prince", releaseDate = "1984", coverImage = R.drawable.cover2),
-            Album(id = "15", title = "Appetite for Destruction", artist = "Guns N' Roses", releaseDate = "1987", coverImage = R.drawable.cover3)
-        )
+            Album(id = "7", title = "Abbey Road", artist = "The Beatles", releaseDate = "1969", coverImage = R.drawable.cover7),
+            Album(id = "8", title = "Rumours", artist = "Fleetwood Mac", releaseDate = "1977", coverImage = R.drawable.cover8),
+            Album(id = "9", title = "Back to Black", artist = "Amy Winehouse", releaseDate = "2006", coverImage = R.drawable.cover9),
+            Album(id = "10", title = "Hotel California", artist = "Eagles", releaseDate = "1976", coverImage = R.drawable.cover10),
+            Album(id = "11", title = "The Dark Side of the Moon", artist = "Pink Floyd", releaseDate = "1973", coverImage = R.drawable.cover11),
+            Album(id = "12", title = "Born to Run", artist = "Bruce Springsteen", releaseDate = "1975", coverImage = R.drawable.cover12),
+            Album(id = "13", title = "Like a Prayer", artist = "Madonna", releaseDate = "1989", coverImage = R.drawable.cover13),
+            Album(id = "14", title = "Purple Rain", artist = "Prince", releaseDate = "1984", coverImage = R.drawable.cover16),
+            Album(id = "15", title = "Appetite for Destruction", artist = "Guns N' Roses", releaseDate = "1987", coverImage = R.drawable.cover15),
+                 Album(id = "16", title = "1989", artist = "Taylor Swift", releaseDate = "2014", coverImage = R.drawable.cover16),
+                 Album(id = "17", title = "Lemonade", artist = "Beyoncé", releaseDate = "2016", coverImage = R.drawable.cover17),
+                 Album(id = "18", title = "OK Computer", artist = "Radiohead", releaseDate = "1997", coverImage = R.drawable.cover18),
+                 Album(id = "19", title = "To Pimp a Butterfly", artist = "Kendrick Lamar", releaseDate = "2015", coverImage = R.drawable.cover19),
+                 Album(id = "20", title = "A Night at the Opera", artist = "Queen", releaseDate = "1975", coverImage = R.drawable.cover20)
+
+
+         )
     }
 
     override fun onCreateView(
@@ -59,7 +66,6 @@ class ListAlbumFragment : Fragment() {
         adapter = AlbumListAdaper(list,parentFragmentManager)
         albumRc.adapter = adapter
 
-        val bundle = Bundle()
 
         return view
     }

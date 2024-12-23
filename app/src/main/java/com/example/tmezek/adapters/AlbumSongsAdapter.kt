@@ -8,8 +8,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tmezek.R
 import com.example.tmezek.data.Album
+import com.example.tmezek.data.Song
 
-class AlbumSongsAdapter(private val list: ArrayList<Album>) :
+class AlbumSongsAdapter(private val list: ArrayList<Song>) :
     RecyclerView.Adapter<AlbumSongsAdapter.ViewHolder>() {
 
     //this method is returning the view for each item in the list
@@ -34,14 +35,16 @@ class AlbumSongsAdapter(private val list: ArrayList<Album>) :
     //the class is hodling the list view
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bindItems(item: Album) {
-            val titleAlbum = itemView.findViewById<TextView>(R.id.alumTitle)
-            val artistAlbum = itemView.findViewById<TextView>(R.id.artistAlbm)
-            val cover = itemView.findViewById<ImageView>(R.id.imageAlbm)
-            val playImag = itemView.findViewById<ImageView>(R.id.playImg)
+        fun bindItems(item: Song) {
+            val title = itemView.findViewById<TextView>(R.id.songAlbumTitle)
+            val artist = itemView.findViewById<TextView>(R.id.artistAlbumTitle)
+            val cover = itemView.findViewById<ImageView>(R.id.imageAlbumCov)
+            val duration = itemView.findViewById<TextView>(R.id.durationAlbum)
 
-            titleAlbum.text = item.title
-            artistAlbum.text = item.artist
+
+            title.text = item.title
+            artist.text = item.artist.joinToString (",")
+            duration.text = item.duration.toString()
             cover.setImageResource(item.coverImage)
 
         }

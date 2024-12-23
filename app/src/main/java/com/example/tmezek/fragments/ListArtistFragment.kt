@@ -53,7 +53,7 @@ class ListArtistFragment : Fragment() {
                 albums = listOf(
                     Album(id = "2", title = "Heaven & Hell", artist = "Ava Max", releaseDate = "2020", coverImage = R.drawable.cover)
                 ),
-                profilePicture = R.drawable.ava_max
+                profilePicture = R.drawable.art1
             ),
             Artist(
                 id = "3",
@@ -66,7 +66,7 @@ class ListArtistFragment : Fragment() {
                 albums = listOf(
                     Album(id = "3", title = "Divide", artist = "Ed Sheeran", releaseDate = "2017", coverImage = R.drawable.cover)
                 ),
-                profilePicture = R.drawable.the_weekend
+                profilePicture = R.drawable.art2
             ),
             Artist(
                 id = "4",
@@ -79,7 +79,7 @@ class ListArtistFragment : Fragment() {
                 albums = listOf(
                     Album(id = "4", title = "Future Nostalgia", artist = "Dua Lipa", releaseDate = "2020", coverImage = R.drawable.cover)
                 ),
-                profilePicture = R.drawable.ava_max
+                profilePicture = R.drawable.art3
             ),
             Artist(
                 id = "5",
@@ -92,7 +92,7 @@ class ListArtistFragment : Fragment() {
                 albums = listOf(
                     Album(id = "5", title = "21", artist = "Adele", releaseDate = "2011", coverImage = R.drawable.cover)
                 ),
-                profilePicture = R.drawable.ava_max
+                profilePicture = R.drawable.art4
             ),
             Artist(
                 id = "6",
@@ -105,7 +105,7 @@ class ListArtistFragment : Fragment() {
                 albums = listOf(
                     Album(id = "6", title = "Views", artist = "Drake", releaseDate = "2016", coverImage = R.drawable.cover)
                 ),
-                profilePicture = R.drawable.the_weekend
+                profilePicture = R.drawable.art5
             ),
             Artist(
                 id = "7",
@@ -118,7 +118,7 @@ class ListArtistFragment : Fragment() {
                 albums = listOf(
                     Album(id = "7", title = "I Am... Sasha Fierce", artist = "Beyoncé", releaseDate = "2008", coverImage = R.drawable.cover)
                 ),
-                profilePicture = R.drawable.ava_max
+                profilePicture = R.drawable.art6
             ),
             Artist(
                 id = "8",
@@ -131,7 +131,7 @@ class ListArtistFragment : Fragment() {
                 albums = listOf(
                     Album(id = "8", title = "Doo-Wops & Hooligans", artist = "Bruno Mars", releaseDate = "2010", coverImage = R.drawable.cover)
                 ),
-                profilePicture = R.drawable.the_weekend
+                profilePicture = R.drawable.art7
             ),
             Artist(
                 id = "9",
@@ -144,8 +144,21 @@ class ListArtistFragment : Fragment() {
                 albums = listOf(
                     Album(id = "9", title = "Fearless", artist = "Taylor Swift", releaseDate = "2008", coverImage = R.drawable.cover)
                 ),
-                profilePicture = R.drawable.ava_max
-            ))
+                profilePicture = R.drawable.art8
+            ),Artist(id = "10", name = "Ed Sheeran", bio = "Edward Christopher Sheeran is an English singer-songwriter and musician.", topSongs = listOf(Song(id = "2", title = "Shape of You", artist = listOf("Ed Sheeran"), album = "Divide", duration = 234, coverImage = R.drawable.cover, genre = "Pop", releaseDate = "2017-01-06")), albums = listOf(Album(id = "10", title = "Divide", artist = "Ed Sheeran", releaseDate = "2017", coverImage = R.drawable.cover)), profilePicture = R.drawable.art9),
+             Artist(id = "11", name = "Adele", bio = "Adele Laurie Blue Adkins is an English singer-songwriter known for her powerful vocals.", topSongs = listOf(Song(id = "4", title = "Someone Like You", artist = listOf("Adele"), album = "21", duration = 285, coverImage = R.drawable.cover, genre = "Soul", releaseDate = "2011-01-24")), albums = listOf(Album(id = "11", title = "21", artist = "Adele", releaseDate = "2011", coverImage = R.drawable.cover)), profilePicture = R.drawable.art10),
+             Artist(id = "12", name = "The Weeknd", bio = "Abel Makkonen Tesfaye, known professionally as The Weeknd, is a Canadian singer-songwriter.", topSongs = listOf(Song(id = "1", title = "Blinding Lights", artist = listOf("The Weeknd"), album = "After Hours", duration = 200, coverImage = R.drawable.cover, genre = "Synthwave", releaseDate = "2019-11-29")), albums = listOf(Album(id = "12", title = "After Hours", artist = "The Weeknd", releaseDate = "2020", coverImage = R.drawable.cover)), profilePicture = R.drawable.art11),
+             Artist(id = "13", name = "Dua Lipa", bio = "Dua Lipa is an English singer-songwriter known for her modern pop and disco-inspired music.", topSongs = listOf(Song(id = "3", title = "Levitating", artist = listOf("Dua Lipa", "DaBaby"), album = "Future Nostalgia", duration = 203, coverImage = R.drawable.cover, genre = "Disco-Pop", releaseDate = "2020-03-27")), albums = listOf(Album(id = "13", title = "Future Nostalgia", artist = "Dua Lipa", releaseDate = "2020", coverImage = R.drawable.cover)), profilePicture = R.drawable.art12),
+             Artist(id = "14", name = "Michael Jackson", bio = "Michael Joseph Jackson was an American singer, songwriter, and dancer, dubbed the 'King of Pop'.", topSongs = listOf(Song(id = "9", title = "Billie Jean", artist = listOf("Michael Jackson"), album = "Thriller", duration = 294, coverImage = R.drawable.cover, genre = "Pop", releaseDate = "1982-11-30")), albums = listOf(Album(id = "14", title = "Thriller", artist = "Michael Jackson", releaseDate = "1982", coverImage = R.drawable.cover)), profilePicture = R.drawable.art13),
+             Artist(id = "15", name = "Nirvana", bio = "Nirvana was an American rock band formed in Aberdeen, Washington, known for their grunge sound.", topSongs = listOf(Song(id = "10", title = "Smells Like Teen Spirit", artist = listOf("Nirvana"), album = "Nevermind", duration = 301, coverImage = R.drawable.cover, genre = "Grunge", releaseDate = "1991-09-10")), albums = listOf(Album(id = "15", title = "Nevermind", artist = "Nirvana", releaseDate = "1991", coverImage = R.drawable.cover)), profilePicture = R.drawable.art14),
+             Artist(id = "16", name = "Queen", bio = "Queen is a British rock band formed in London in 1970, known for their elaborate and eclectic style.", topSongs = listOf(Song(id = "6", title = "Bohemian Rhapsody", artist = listOf("Queen"), album = "A Night at the Opera", duration = 354, coverImage = R.drawable.cover, genre = "Rock", releaseDate = "1975-10-31")), albums = listOf(Album(id = "16", title = "A Night at the Opera", artist = "Queen", releaseDate = "1975", coverImage = R.drawable.cover)), profilePicture = R.drawable.art15),
+             Artist(id = "17", name = "The Beatles", bio = "The Beatles were an English rock band formed in Liverpool, widely regarded as the most influential band.", topSongs = listOf(Song(id = "11", title = "Hey Jude", artist = listOf("The Beatles"), album = "Hey Jude", duration = 431, coverImage = R.drawable.cover, genre = "Rock", releaseDate = "1968-08-26")), albums = listOf(Album(id = "17", title = "Abbey Road", artist = "The Beatles", releaseDate = "1969", coverImage = R.drawable.cover)), profilePicture = R.drawable.art16),
+             Artist(id = "18", name = "Amy Winehouse", bio = "Amy Jade Winehouse was an English singer-songwriter known for her deep, expressive vocals.", topSongs = listOf(Song(id = "8", title = "Back to Black", artist = listOf("Amy Winehouse"), album = "Back to Black", duration = 295, coverImage = R.drawable.cover, genre = "Soul", releaseDate = "2006-10-27")), albums = listOf(Album(id = "18", title = "Back to Black", artist = "Amy Winehouse", releaseDate = "2006", coverImage = R.drawable.cover)), profilePicture = R.drawable.art17),
+             Artist(id = "19", name = "Kendrick Lamar", bio = "Kendrick Lamar is an American rapper, songwriter, and record producer known for his profound lyrics.", topSongs = listOf(Song(id = "19", title = "Alright", artist = listOf("Kendrick Lamar"), album = "To Pimp a Butterfly", duration = 235, coverImage = R.drawable.cover, genre = "Hip Hop", releaseDate = "2015-03-15")), albums = listOf(Album(id = "19", title = "To Pimp a Butterfly", artist = "Kendrick Lamar", releaseDate = "2015", coverImage = R.drawable.cover)), profilePicture = R.drawable.art18),
+             Artist(id = "20", name = "Beyoncé", bio = "Beyoncé Giselle Knowles-Carter is an American singer, songwriter, and actress.", topSongs = listOf(Song(id = "20", title = "Halo", artist = listOf("Beyoncé"), album = "I Am... Sasha Fierce", duration = 261, coverImage = R.drawable.cover, genre = "Pop", releaseDate = "2008-01-20")), albums = listOf(Album(id = "20", title = "Lemonade", artist = "Beyoncé", releaseDate = "2016", coverImage = R.drawable.cover)), profilePicture = R.drawable.art19),
+             Artist(id = "21", name = "Bruno Mars", bio = "Peter Gene Hernandez, known professionally as Bruno Mars, is an American singer-songwriter and producer.", topSongs = listOf(Song(id = "21", title = "Uptown Funk", artist = listOf("Bruno Mars"), album = "Uptown Special", duration = 269, coverImage = R.drawable.cover, genre = "Funk", releaseDate = "2014-11-10")), albums = listOf(Album(id = "21", title = "24K Magic", artist = "Bruno Mars", releaseDate = "2016", coverImage = R.drawable.cover)), profilePicture = R.drawable.art20)
+
+         )
     }
 
     override fun onCreateView(

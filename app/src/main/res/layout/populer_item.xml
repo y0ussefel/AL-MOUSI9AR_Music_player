@@ -20,7 +20,7 @@
         <ImageView
             android:id="@+id/image2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="160dp"
             android:scaleType="centerCrop"
             tools:srcCompat="@drawable/cover" />
 
@@ -38,11 +38,13 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="Song Name"
+                android:textColor="@color/primaryColor"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/artist2"
+                android:textColor="@color/primaryColor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"

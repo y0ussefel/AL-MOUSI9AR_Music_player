@@ -14,7 +14,7 @@ import com.example.tmezek.data.Album
 import com.example.tmezek.fragments.AlbumSongs
 
 
-class AlbumListAdaper(private val list: ArrayList<Album>,var parentFragment : FragmentManager) :
+class AlbumListAdaper(private val list: ArrayList<Album>,private val parentFragment : FragmentManager) :
     RecyclerView.Adapter<AlbumListAdaper.ViewHolder>() {
 
     //this method is returning the view for each item in the list
@@ -30,14 +30,15 @@ class AlbumListAdaper(private val list: ArrayList<Album>,var parentFragment : Fr
         val item = list[position]
         holder.itemView.setOnClickListener {
             val bundle = Bundle()
+            val fragment = AlbumSongs()
             bundle.putString("titleAlbum",item.title)
             bundle.putInt("coverAlbum",item.coverImage)
-            AlbumSongs().arguments = bundle
+            fragment.arguments = bundle
             parentFragment.beginTransaction()
-                .replace(R.id.fl,AlbumSongs())
-
+                .replace(R.id.framelayout,fragment)
+                .addToBackStack(null)
+                .commit()
         }
-
     }
 
     //this method is giving the size of the list
@@ -52,7 +53,6 @@ class AlbumListAdaper(private val list: ArrayList<Album>,var parentFragment : Fr
             val titleAlbum = itemView.findViewById<TextView>(R.id.alumTitle)
             val artistAlbum = itemView.findViewById<TextView>(R.id.artistAlbm)
             val cover = itemView.findViewById<ImageView>(R.id.imageAlbm)
-            val playImag = itemView.findViewById<ImageView>(R.id.playImg)
 
             titleAlbum.text = item.title
             artistAlbum.text = item.artist
