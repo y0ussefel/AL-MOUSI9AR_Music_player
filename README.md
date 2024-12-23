@@ -14,6 +14,8 @@ A sleek and modern music player app designed for music enthusiasts. AL MOUSI9AR 
 
 ## Screenshots 📸
 ![Screenshot_20241221_000857_AL MOUSI9AR](https://github.com/user-attachments/assets/41627f6a-725d-44ba-a6f7-b03b437c4023)
+![Screenshot_20241221_011249_AL MOUSI9AR](https://github.com/user-attachments/assets/4050ecbb-7392-4493-9cf3-227791451d7d)
+
 
 ![Music Player Screen](./app/src/main/res/drawable/screenShots/)
 
@@ -32,8 +34,8 @@ A sleek and modern music player app designed for music enthusiasts. AL MOUSI9AR 
 3.Build and run the app on an emulator or physical device.
 
 ## Contact 💬
-###For any inquiries or support, feel free to reach out:
-Developer: [YOUSSEF EL FENARY]
+### For any inquiries or support, feel free to reach out:
+Developer: YOUSSEF EL FENARY
 GitHub: y0ussefel
 
 
