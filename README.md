@@ -14,6 +14,8 @@ A sleek and modern music player app designed for music enthusiasts. AL MOUSI9AR 
 
 ## Screenshots 📸
 ![Screenshot_20241221_000857_AL MOUSI9AR](https://github.com/user-attachments/assets/41627f6a-725d-44ba-a6f7-b03b437c4023)
+![Music Player Screen](./app/src/main/res/drawable/screenShots/Screenshot_20241221_001023_ALMOUSI9AR.jpg)
+
 ![Screenshot_20241221_011249_AL MOUSI9AR](https://github.com/user-attachments/assets/4050ecbb-7392-4493-9cf3-227791451d7d)
 
 
