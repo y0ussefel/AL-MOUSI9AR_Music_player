@@ -29,8 +29,8 @@ A sleek and modern music player app designed for music enthusiasts. AL MOUSI9AR 
 1. Clone the repository:
    ```bash
    git clone https://github.com/y0ussefel/AL-MOUSI9AR_Music_player.git
-2.Open the project in Android Studio.
-3.Build and run the app on an emulator or physical device.
+2. Open the project in Android Studio.
+3. Build and run the app on an emulator or physical device.
 
 ## Contact 💬
 ### For any inquiries or support, feel free to reach out:
