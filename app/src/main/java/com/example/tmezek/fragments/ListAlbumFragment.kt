@@ -42,7 +42,7 @@ class ListAlbumFragment : Fragment() {
             Album(id = "10", title = "Hotel California", artist = "Eagles", releaseDate = "1976", coverImage = R.drawable.cover10),
             Album(id = "11", title = "The Dark Side of the Moon", artist = "Pink Floyd", releaseDate = "1973", coverImage = R.drawable.cover11),
             Album(id = "12", title = "Born to Run", artist = "Bruce Springsteen", releaseDate = "1975", coverImage = R.drawable.cover12),
-            Album(id = "13", title = "Like a Prayer", artist = "Madonna", releaseDate = "1989", coverImage = R.drawable.cover13),
+            Album(id = "13", title = "Like a Prayer", artist = "Madonna", releaseDate = "1989", coverImage = R.drawable.cover3),
             Album(id = "14", title = "Purple Rain", artist = "Prince", releaseDate = "1984", coverImage = R.drawable.cover16),
             Album(id = "15", title = "Appetite for Destruction", artist = "Guns N' Roses", releaseDate = "1987", coverImage = R.drawable.cover15),
                  Album(id = "16", title = "1989", artist = "Taylor Swift", releaseDate = "2014", coverImage = R.drawable.cover16),

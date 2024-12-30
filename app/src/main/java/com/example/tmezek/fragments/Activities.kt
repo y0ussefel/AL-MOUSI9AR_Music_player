@@ -83,7 +83,9 @@ class Activities : Fragment() {
         trendingRc = view.findViewById(R.id.trendingRecycler)
 
         trendingRc.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        adapterTR = TrendingViewHolder(listTrending)
+        adapterTR = TrendingViewHolder(listTrending){song ->
+            openPlayerFragment(song)
+        }
         trendingRc.adapter = adapterTR
 
         populerRc = view.findViewById(R.id.popularRv)
@@ -95,7 +97,9 @@ class Activities : Fragment() {
 
         forYouRc = view.findViewById(R.id.forYouRv)
         forYouRc.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-        adapterFR = ForYouAdapter(listForYou)
+        adapterFR = ForYouAdapter(listForYou){song ->
+            openPlayerFragment(song)
+        }
         forYouRc.adapter = adapterFR
         return view
 
@@ -109,7 +113,7 @@ class Activities : Fragment() {
         fragment.arguments = bundle
 
         parentFragmentManager.beginTransaction()
-            .replace(R.id.fl, fragment) // Ensure correct container ID
+            .replace(R.id.fl, fragment)
             .addToBackStack(null)
             .commit()
     }

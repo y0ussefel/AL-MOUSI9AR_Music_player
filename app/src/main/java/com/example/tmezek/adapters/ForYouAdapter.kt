@@ -10,7 +10,7 @@ import com.example.tmezek.R
 import com.example.tmezek.data.Song
 
 
-class ForYouAdapter(private val list: ArrayList<Song>) :
+class ForYouAdapter(private val list: ArrayList<Song>, val onSongClicked:(Song) -> Unit) :
     RecyclerView.Adapter<ForYouAdapter.ViewHolder>() {
 
     //this method is returning the view for each item in the list
@@ -33,7 +33,7 @@ class ForYouAdapter(private val list: ArrayList<Song>) :
     }
 
     //the class is hodling the list view
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bindItems(item: Song) {
             val title = itemView.findViewById<TextView>(R.id.songName3)
@@ -44,6 +44,10 @@ class ForYouAdapter(private val list: ArrayList<Song>) :
             title.text = item.title
             artist.text = item.artist.joinToString(",")
             image.setImageResource(item.coverImage)
+
+            itemView.setOnClickListener{
+                onSongClicked(item)
+            }
 
         }
     }

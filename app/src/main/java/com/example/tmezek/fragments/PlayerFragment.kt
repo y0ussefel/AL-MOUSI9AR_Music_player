@@ -19,6 +19,7 @@ class PlayerFragment : Fragment() {
     private lateinit var startTimer: TextView
     private lateinit var endTimer: TextView
     private lateinit var playPauseButton: ImageButton
+    private lateinit var backBtn: ImageView
 
     private val handler = Handler(Looper.getMainLooper())
     private var isPlaying = false
@@ -45,6 +46,7 @@ class PlayerFragment : Fragment() {
         startTimer = view.findViewById(R.id.startTimer)
         endTimer = view.findViewById(R.id.endTimer)
         playPauseButton = view.findViewById(R.id.playPauseButton)
+        backBtn = view.findViewById(R.id.backBtn)
 
         // Set song details
         view.findViewById<TextView>(R.id.song_name).text = song.title
@@ -59,6 +61,10 @@ class PlayerFragment : Fragment() {
         // Set up play/pause button
         playPauseButton.setOnClickListener {
             togglePlayPause()
+        }
+
+        backBtn.setOnClickListener{
+            requireActivity().onBackPressedDispatcher.onBackPressed()
         }
 
         // Handle SeekBar interactions

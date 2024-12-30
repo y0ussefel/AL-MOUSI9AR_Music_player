@@ -19,6 +19,7 @@ class DetailsFragment : Fragment() {
     lateinit var nomP: String
     lateinit var listt: ArrayList<Song>
     lateinit var adapter: ForYouAdapter
+    lateinit var backBtn2: ImageView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,6 +36,11 @@ class DetailsFragment : Fragment() {
         val imageDetails = view.findViewById<ImageView>(R.id.imageDetails)
         val nomDetails = view.findViewById<TextView>(R.id.titleDetails)
         val descDetails = view.findViewById<TextView>(R.id.descriptionDetails)
+        backBtn2 = view.findViewById(R.id.backBtn2)
+
+        backBtn2.setOnClickListener{
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
 
         val bundle = arguments
         if (bundle != null) {
@@ -49,7 +55,7 @@ class DetailsFragment : Fragment() {
             val playlist = PlaylistRepo.findPosition(nomP)
             if (playlist != null) {
                 listt = ArrayList(playlist.songs)
-                adapter = ForYouAdapter(listt)
+                adapter = ForYouAdapter(listt){}
                 MesSong.adapter = adapter
             }
             parentFragmentManager.setFragmentResultListener("updatePlaylist", this) { _, _ ->
